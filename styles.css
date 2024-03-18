@@ -1,0 +1,17 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(19, 17, 17)!important;
+}
+
+#home-navbar{
+    background-image: linear-gradient(to bottom, rgba(0,0,0, 1), rgba(0,0,0, 0.75), rgba(0,0,0, 0));
+}
+#brand-title{
+    font-size: x-large;
+}
+.card{
+    width: 10em;
+    margin: 10px;
+    transition: 0.3s;
+}
