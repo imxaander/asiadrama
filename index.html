@@ -7,12 +7,15 @@
     <!-- styles -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.css" integrity="sha512-VSD3lcSci0foeRFRHWdYX4FaLvec89irh5+QAGc00j5AOdow2r5MFPhoPEYBUQdyarXwbzyJEO7Iko7+PnPuBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- imports -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <script defer src="https://kit.fontawesome.com/6b9c8a6e93.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.js" integrity="sha512-MnKz2SbnWiXJ/e0lSfSzjaz9JjJXQNb2iykcZkEY2WOzgJIWVqJBFIIPidlCjak0iTH2bt2u1fHQ4pvKvBYy6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    
 
   </head>
   <body>
@@ -51,56 +54,67 @@
                 <div class="container-fluid m-0 p-0 fav-section">
                     <p class="h3">Favourites</p>
                     <!-- slider -->
-                    <div class="container-fluid carousels p-0 m-0  ">
-                        <!-- sample card -->
-                        <div class="card" > 
-                            <img class="card-img img-fluid" src="https://asianimg.pro/cover/my-man-is-cupid-1701137121.png" alt="">
-                        </div>
-                        <!-- sample card -->
-                        <div class="card" > 
-                            <img class="card-img img-fluid" src="https://asianimg.pro/cover/doctor-slump-1704963758.png" alt="">
-                        </div>
-                        <!-- sample card -->
-                        <div class="card" > 
-                            <img class="card-img img-fluid" src="https://asianimg.pro/QP.jpg" alt="">
-                        </div>
+                    <div class="container-fluid carousels fav-section-carousel p-0 m-0  ">
+                        s
                         
                     </div>
                 </div>
     
-                <div class="container-fluid m-0 p-0 fav-section">
-                    <p class="h3">Search:</p>
+                <div class="container-fluid m-0 p-0 popular-section">
+                    <p class="h3">Popular Drama:</p>
                     <!-- slider -->
-                    <div class="container-fluid carousels p-0 m-0  ">
-                        <!-- sample card -->
-                        <div class="card" > 
-                            <img class="card-img img-fluid" src="https://asianimg.pro/cover/my-man-is-cupid-1701137121.png" alt="">
-                        </div>
-                        <!-- sample card -->
-                        <div class="card" > 
-                            <img class="card-img img-fluid" src="https://asianimg.pro/cover/doctor-slump-1704963758.png" alt="">
-                        </div>
-                        <!-- sample card -->
-                        <div class="card" > 
-                            <img class="card-img img-fluid" src="https://asianimg.pro/QP.jpg" alt="">
-                        </div>
+                    <div class="container-fluid carousels popular-section-carousel p-0 m-0  " id="popular-section-carousel">
                     </div>
                 </div>  
             </div>
         </div>
 
         <div class="tab-pane fade search-tab" id="search-tab">
-            <div class="container-fluid text-center ">
-                <div class="row row-cols-auto search-results ">
+            <br>
+            <br>
+            <div class="container-fluid text-center search-results d-flex flex-wrap justify-content-center">
+
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="detail-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content text-light "  id="detail-modal-content" >
+                <div class="modal-header">
+                  <h1 class="modal-title h3" id="detail-modal-title">Modal title</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <div class="modal-body">
+                    <div id="detail-modal-info"></div>
+                    <p class="h4">Episodes</p>
+                    <hr>
+                    <div id="detail-modal-episodes"></div>
+                </div>
+              </div>
             </div>
         </div>
     </div>
+
+    <div class="video-pane position-fixed top-50 start-50 translate-middle container-fluid h-100  w-100 p-5 bg-black visually-hidden " id="video-pane" style="z-index: 1700;">
+        <button class="btn btn-dark btn-lg m-2" onclick="closeWatch()"><i class="fas fa-arrow-left"></i></button>
+        <div id="video-player-wrapper" class="container-fluid ">
+            <div class="video-player " >
+                <!-- <iframe id="video-player-iframe" sandbox = "allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation allow-modals" width="100%" height="100%" allowfullscreen src="//pladrac.net/play.php?id=NDAyMjI3&title=Knight+Flower+%282024%29+episode+12&typesub=SUB" target="_blank"></iframe> -->
+            </div>
+            <div><p class="h4 video-title text-light"></p><i class="fas fa-star fav-button"onclick=""></i></div>
+            <div class="video-pane-episodes overflow-y-scroll ">
+
+                
+            </div>
+        </div>
+    </div>
+    
     <!-- imports end.. -->
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-
+    <script src="script.js"></script>
     </body>
 </html>
