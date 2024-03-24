@@ -32,7 +32,14 @@ body{
     width: 100%;
     height: 100%;
 }
-
+/* #detail-modal-trailer iframe{
+    width: 100%;
+    height: 100%;
+} */
+.watch-buttons{
+    font-size: xx-large;
+    color: white;
+}
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
     #video-player-wrapper{

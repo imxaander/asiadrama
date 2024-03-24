@@ -22,7 +22,7 @@
     
     <nav class="navbar mt-0  fixed-top " id="home-navbar">
         <div class="container-fluid ">
-          <a class="navbar-brand text-light" id="brand-title" href="">Watch</a>
+          <a class="navbar-brand text-light" id="brand-title" href="">Watch Asia <i class="fas fa-globe-asia"></i></a>
           <form class="d-flex" role="search">
             <input id="search-input"class="form-control me-2" type="search" placeholder="Search" aria-label="Search"  oninput="search()">
             <button class="btn text-light" type="submit"><i class="fas fa-search"></i></button>
@@ -42,10 +42,11 @@
     <div class="tab-content">
         <div class="tab-pane fade show active home-tab" id="home-tab">
             <div class="container-fluid p-0 position-relative">
-                <img class="w-100 image-fluid"src="https://dramacool.com.pa/plugins/slideshow/slides/new/dramacool-ltns.png" alt="">
+                <img class="w-100 image-fluid" id="idk-img"src="images/loading.png" alt="">
                 <div class="container-fluid p-0 position-absolute bottom-0 start-0 p-5">
-                    <button class="btn bg-light btn-lg "> <i class="fas fa-play"></i> PLAY</button>
-                    <button class="btn bg-dark text-light btn-lg "> <i class="fas fa-info-circle"></i> MORE INFO</button>
+                    <b><p class="h1 b" id="idk-title">Loading...</p></b>
+                    <!-- <button class="btn bg-light btn-lg "> <i class="fas fa-play"></i> PLAY</button> -->
+                    <button class="btn bg-dark text-light btn-lg " id="idk-btn"> <i class="fas fa-info-circle"></i> MORE INFO</button>
                 </div>
             </div>
             
@@ -78,7 +79,7 @@
         </div>
 
 
-        <div class="modal fade" id="detail-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade modal-lg" id="detail-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
               <div class="modal-content text-light "  id="detail-modal-content" >
                 <div class="modal-header">
@@ -86,7 +87,12 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div id="detail-modal-info"></div>
+                    <div id="detail-modal-info" class="">
+                      <div id="detail-modal-trailer" class="container-fluid d-flex justify-content-center h-100 mb-1">
+                        <iframe src="" frameborder="0"></iframe>
+                      </div>
+                    </div>
+                    <hr>
                     <p class="h4">Episodes</p>
                     <hr>
                     <div id="detail-modal-episodes"></div>
@@ -96,13 +102,21 @@
         </div>
     </div>
 
-    <div class="video-pane position-fixed top-50 start-50 translate-middle container-fluid h-100  w-100 p-5 bg-black visually-hidden " id="video-pane" style="z-index: 1700;">
-        <button class="btn btn-dark btn-lg m-2" onclick="closeWatch()"><i class="fas fa-arrow-left"></i></button>
-        <div id="video-player-wrapper" class="container-fluid ">
+    <div class="video-pane position-fixed top-50 start-50 translate-middle container-fluid h-100  w-100 p-5 bg-black visually-hidden  d-flex align-items-center" id="video-pane" style="z-index: 1700;">
+        <button class="btn btn-dark btn-lg m-2 align-self-baseline" onclick="closeWatch()"><i class="fas fa-arrow-left"></i></button>
+        <div id="video-player-wrapper" class="container-fluid">
             <div class="video-player " >
                 <!-- <iframe id="video-player-iframe" sandbox = "allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation allow-modals" width="100%" height="100%" allowfullscreen src="//pladrac.net/play.php?id=NDAyMjI3&title=Knight+Flower+%282024%29+episode+12&typesub=SUB" target="_blank"></iframe> -->
             </div>
-            <div><p class="h4 video-title text-light"></p><i class="fas fa-star fav-button"onclick=""></i></div>
+            <div class="container-fluid d-flex justify-content-between">
+              <p class="h4 video-title text-light"></p>
+              <div class="">
+                <a id="watch-dl" href="" class="m-2 " target="_blank">
+                  <i class="fas fa-download watch-buttons"  href=""></i>
+                </a>
+                <i class="fas fa-star watch-buttons fav-button m-2" onclick=""  style="font-size: xx-large; color: white;"></i>
+              </div>
+            </div>
             <div class="video-pane-episodes overflow-y-scroll ">
 
                 
